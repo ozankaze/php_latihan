@@ -34,7 +34,7 @@ $students = mysqli_query($link, $query);
             <td><?php echo $student['umur'] ?></td>
             <td><?php echo $student['alamat'] ?></td>
             <td>
-              <a href="#" class="btn btn-info">update</a>
+              <a href="update.php?id=<?php echo $student['id'] ?>" class="btn btn-info">update</a>
               <a href="#" class="btn btn-danger">delete</a>
             </td>
         </tr>
