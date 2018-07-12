@@ -30,6 +30,8 @@ if( isset($_POST['submit']) ) {
                     <label for="password">Password</label>
                     <input type="password" name="password" class="form-control" id="password">
                 </div>
+                <div class="form-group">
+                <a href="register.php" class="color: white;" style="color:  white;">Daftar gratis</a>                </div>
                 <button type="submit" name="submit" class="btn btn-info">Login</button>
             </form>
         </div>
