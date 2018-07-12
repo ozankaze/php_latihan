@@ -17,7 +17,8 @@ if( isset($_POST['submit']) ) {
 
     // cek data
     if( cek_data($email, $pass) ) {
-        echo 'berhasil';
+        $_SESSION['email'] = $email; 
+        header('Location: index.php');
     } else {
         echo 'gagal';
     }

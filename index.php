@@ -3,6 +3,10 @@
 require_once('core/init.php');
 require_once('view/header.php');
 
+if( !isset( $_SESSION['email'] ) ) {
+  header('Location: login.php');
+}
+
 $query = "SELECT * FROM `murid`";
 
 $students = mysqli_query($link, $query);
