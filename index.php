@@ -1,8 +1,40 @@
 <?php
 
+require_once('core/init.php');
 require_once('view/header.php');
+
+$query = "SELECT * FROM `murid`";
+
+$students = mysqli_query($link, $query);
+// var_dump($a);
+// var_dump($student);die();
 
 ?>
 
+<div class="container">
+<table class="table">
+  <h2>Daftar Nama Santri QODR</h2>
+  <a href="index.php">Create</a>
+  <thead class="table-primary">
+    <th scope="row">1</th>
+    <th scope="row">Nama</th>
+    <th scope="row">Umur</th>
+    <th scope="row">Alamat</th>
+    <th scope="row">Action</th>
+  </thead>
+  <tbody>
+    <?php foreach( $students as $student ) : ?>
+        <tr>
+            <td><?php echo $student['id'] ?></td>
+            <td><?php echo $student['nama'] ?></td>
+            <td><?php echo $student['umur'] ?></td>
+            <td><?php echo $student['alamat'] ?></td>
+            <td><a href="#">update</a>
+            <a href="#">delete</a></td>
+        </tr>
+    <?php endforeach ?>
+  </tbody>
+</table>
+</div>
 
 <?php require_once('view/footer.php');?>
