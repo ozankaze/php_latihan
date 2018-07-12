@@ -7,14 +7,6 @@ if( isset($_POST['submit']) ) {
     $email = $_POST['email'];
     $pass = $_POST['password'];
 
-    // cek login email kembar
-    // if( login_cek_nama($email) ) {
-
-        
-    // } else {
-    //     echo 'email sudah ada';
-    // }
-
     // cek data
     if( cek_data($email, $pass) ) {
         $_SESSION['email'] = $email; 
@@ -27,7 +19,7 @@ if( isset($_POST['submit']) ) {
 ?>
 
 <div class="card text-white bg-primary mb-3" style="max-width: 40rem; margin: 0 auto;">
-    <div class="card-header">Login</div>
+    <div class="card-header float-right">Login</div>
         <div class="card-body">
             <form action="login.php" method="post">
                 <div class="form-group">

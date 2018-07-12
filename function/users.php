@@ -54,19 +54,5 @@ function cek_data($email, $pass) {
     }
 }
 
-function login_cek_nama($email) {
-    global $link;
-    $email = mysqli_real_escape_string($link, $email);
-
-    $query = "SELECT * FROM `users` WHERE email = '$email'";
-    // var_dump($query);die();
-    if( $riset = mysqli_query($link, $query) ) {
-        if( mysqli_num_rows($riset) != 0 ) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-}
 
 ?>
