@@ -14,7 +14,7 @@ $students = mysqli_query($link, $query);
 <div class="container">
 <table class="table">
   <h2>Daftar Nama Santri QODR</h2>
-  <a href="index.php">Create</a>
+  <a href="create.php" class="btn btn-success mb-3">Create</a>
   <thead class="table-primary">
     <th scope="row">1</th>
     <th scope="row">Nama</th>
@@ -29,8 +29,10 @@ $students = mysqli_query($link, $query);
             <td><?php echo $student['nama'] ?></td>
             <td><?php echo $student['umur'] ?></td>
             <td><?php echo $student['alamat'] ?></td>
-            <td><a href="#">update</a>
-            <a href="#">delete</a></td>
+            <td>
+              <a href="#" class="btn btn-info">update</a>
+              <a href="#" class="btn btn-danger">delete</a>
+            </td>
         </tr>
     <?php endforeach ?>
   </tbody>
