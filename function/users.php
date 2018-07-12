@@ -1,0 +1,72 @@
+<?php
+
+function daftar_user($nama, $email, $pass) {
+    global $link;
+    // mencegah sql injection
+    $nama = mysqli_real_escape_string($link, $nama);
+    $email = mysqli_real_escape_string($link, $email);
+    $pass = mysqli_real_escape_string($link, $pass);
+
+    // enkripsi password
+    $pass = password_hash($pass, PASSWORD_DEFAULT);
+    $query = "INSERT INTO `users` (`nama`, `email`, `password`) VALUES ('$nama', '$email', '$pass')";
+
+    // var_dump($query);die();
+    if( mysqli_query($link, $query) ) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function register_cek_nama($nama) {
+    global $link;
+    $nama = mysqli_real_escape_string($link, $nama);
+
+    $query = "SELECT * FROM `users` WHERE nama = '$nama'";
+    // var_dump($query);die();
+    if( $riset = mysqli_query($link, $query) ) {
+        if( mysqli_num_rows($riset) == 0 ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+function cek_data($email, $pass) {
+    global $link;
+    $email = mysqli_real_escape_string($link, $email);
+    $pass = mysqli_real_escape_string($link, $pass);
+
+    $query = "SELECT `password` FROM `users` WHERE `email` = '$email'";
+    // print_r($query);die();
+    $result = mysqli_query($link, $query);
+    // var_dump($result);die();
+    $hash = mysqli_fetch_assoc($result)['password'];
+    // print_r($hash);die();
+
+    if( password_verify($pass, $hash) ) {
+        // die('Berhasil');
+        return true; 
+    } else {
+        return false;
+    }
+}
+
+function login_cek_nama($email) {
+    global $link;
+    $email = mysqli_real_escape_string($link, $email);
+
+    $query = "SELECT * FROM `users` WHERE email = '$email'";
+    // var_dump($query);die();
+    if( $riset = mysqli_query($link, $query) ) {
+        if( mysqli_num_rows($riset) != 0 ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+?>
