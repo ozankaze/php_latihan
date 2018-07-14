@@ -20,7 +20,9 @@ if( isset($_POST['submit']) ) {
         if( register_cek_nama($nama) ) {
             // daftar user
             if( daftar_user($nama, $email, $pass) ) {
-                echo 'berhasil';
+                // echo 'berhasil';
+                $_SESSION['email'] = $email;    // ini session dari login
+                header('Location: index.php');
             } else {
                 echo 'gagal';
             }
