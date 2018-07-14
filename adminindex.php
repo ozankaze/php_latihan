@@ -19,7 +19,9 @@ $students = mysqli_query($link, $query);
 
 <div class="container">
 <table class="table">
-  <h2>Hola Admin</h2>
+  <?php if( cek_role($_SESSION['email']) ) : ?>
+    <h2>Hola Admin</h2>
+  <?php endif ?>
   <a href="create.php" class="btn btn-success mb-3">Create</a>
   <thead class="table-primary">
     <th scope="row">1</th>
