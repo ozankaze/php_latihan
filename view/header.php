@@ -20,8 +20,13 @@
 
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav">
+                    <!-- <?php if( cek_role($_SESSION['email']) ) { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="adminindex.php">Admin daftar santri</a>
+                        </li>
+                    <?php } ?> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Nama Siswa</a>
+                        <a class="nav-link" href="index.php">Daftar santri</a>
                     </li>
                     <li class="nav-item ml-auto">
                         <!-- <a class="nav-link" href="login.php">Login</a> -->
