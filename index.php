@@ -18,14 +18,14 @@ $students = mysqli_query($link, $query);
 <div class="container">
 <table class="table">
   <h2>Daftar Nama Santri QODR</h2>
-  <!-- <a href="create.php" class="btn btn-success mb-3">Create</a> -->
+  <a href="create.php" class="btn btn-success mb-3">Create</a>
   <a href="logout.php" class="btn btn-warning mb-3 ml-3">Logout</a>
   <thead class="table-primary">
     <th scope="row">1</th>
     <th scope="row">Nama</th>
     <th scope="row">Umur</th>
     <th scope="row">Alamat</th>
-    <!-- <th scope="row">Action</th> -->
+    <th scope="row">Action</th>
   </thead>
   <tbody>
     <?php foreach( $students as $student ) : ?>
@@ -34,10 +34,10 @@ $students = mysqli_query($link, $query);
             <td><?php echo $student['nama'] ?></td>
             <td><?php echo $student['umur'] ?></td>
             <td><?php echo $student['alamat'] ?></td>
-            <!-- <td>
+            <td>
               <a href="update.php?id=<?php echo $student['id'] ?>" class="btn btn-info">update</a>
               <a href="delete.php?id=<?php echo $student['id'] ?>" class="btn btn-danger">delete</a>
-            </td> -->
+            </td>
         </tr>
     <?php endforeach ?>
   </tbody>

@@ -9,6 +9,7 @@ if( isset($_POST['submit']) ) {
 
     if( cek_role($email) ) {
         // echo 'berhasil';
+        $_SESSION['email'] = $email; 
         header('Location: adminindex.php');
     } else {
         // cek data
