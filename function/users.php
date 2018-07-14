@@ -55,7 +55,7 @@ function cek_data($email, $pass) {
 }
 
 // cek role admin
-function cek_role($email) {
+function admin_role($email) {
     global $link;
 
     $email = mysqli_real_escape_string($link, $email);

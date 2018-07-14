@@ -7,7 +7,7 @@ if( isset($_POST['submit']) ) {
     $email = $_POST['email'];
     $pass = $_POST['password'];
 
-    if( cek_role($email) ) {
+    if( admin_role($email) ) {
         // echo 'berhasil';
         $_SESSION['email'] = $email; 
         header('Location: adminindex.php');

@@ -20,7 +20,7 @@
 
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav">
-                    <?php if( isset($_SESSION['email']) and cek_role($_SESSION['email'])  ) { ?>
+                    <?php if( isset($_SESSION['email']) && admin_role($_SESSION['email'])  ) { ?>
                         <li class="nav-item">
                             <a class="nav-link" href="adminindex.php">Admin daftar santri</a>
                         </li>

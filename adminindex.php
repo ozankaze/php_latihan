@@ -3,9 +3,13 @@
 require_once('core/init.php');
 require_once('view/header.php');
 
-// if( !isset( $_SESSION['email'] ) ) {
-//   header('Location: login.php');
-// }
+if( !isset( $_SESSION['email'] ) ) {
+  header('Location: login.php');
+}
+
+if( isset($_SESSION['email']) ) {
+  header('Location: index.php');
+}
 
 $query = "SELECT * FROM `murid`";
 
@@ -19,7 +23,7 @@ $students = mysqli_query($link, $query);
 
 <div class="container">
 <table class="table">
-  <?php if( cek_role($_SESSION['email']) ) : ?>
+  <?php if( isset($_SESSION['email']) and admin_role($_SESSION['email']) ) : ?>
     <h2>Hola Admin</h2>
   <?php endif ?>
   <a href="create.php" class="btn btn-success mb-3">Create</a>
