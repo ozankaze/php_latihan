@@ -9,7 +9,7 @@
 </head>
     <body class="container">
         <header>
-            <h1>Belajar apa yang di pelajari ...</h1>
+            <h1>Belajar apa yang di pelajari ... Back-End DEV</h1>
         </header>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
