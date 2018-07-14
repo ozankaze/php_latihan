@@ -7,12 +7,17 @@ if( isset($_POST['submit']) ) {
     $email = $_POST['email'];
     $pass = $_POST['password'];
 
-    // cek data
-    if( cek_data($email, $pass) ) {
-        $_SESSION['email'] = $email; 
-        header('Location: index.php');
+    if( cek_role($email) ) {
+        // echo 'berhasil';
+        header('Location: adminindex.php');
     } else {
-        echo 'gagal';
+        // cek data
+        if( cek_data($email, $pass) ) {
+            $_SESSION['email'] = $email; 
+            header('Location: index.php');
+        } else {
+            echo 'gagal';
+        }
     }
 }
 

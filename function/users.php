@@ -54,5 +54,27 @@ function cek_data($email, $pass) {
     }
 }
 
+// cek role admin
+function cek_role($email) {
+    global $link;
+
+    $email = mysqli_real_escape_string($link, $email);
+
+    $query = "SELECT `role` FROM `users` WHERE email = '$email'";
+    // var_dump($query);die();
+
+    $result = mysqli_query($link, $query);
+    // var_dump($result);die();
+
+    $hash = mysqli_fetch_assoc($result)['role'];
+    // var_dump($hash);die();
+
+    if( $hash == 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 
 ?>
