@@ -3,13 +3,13 @@
 function daftar_user($nama, $email, $pass) {
     global $link;
     // mencegah sql injection
-    $nama = mysqli_real_escape_string($link, $nama);
+    $name = mysqli_real_escape_string($link, $nama);
     $email = mysqli_real_escape_string($link, $email);
     $pass = mysqli_real_escape_string($link, $pass);
 
     // enkripsi password
     $pass = password_hash($pass, PASSWORD_DEFAULT);
-    $query = "INSERT INTO `users` (`nama`, `email`, `password`) VALUES ('$nama', '$email', '$pass')";
+    $query = "INSERT INTO `users` (`name`, `email`, `password`) VALUES ('$name', '$email', '$pass')";
 
     // var_dump($query);die();
     if( mysqli_query($link, $query) ) {
@@ -21,9 +21,9 @@ function daftar_user($nama, $email, $pass) {
 
 function register_cek_nama($nama) {
     global $link;
-    $nama = mysqli_real_escape_string($link, $nama);
+    $name = mysqli_real_escape_string($link, $nama);
 
-    $query = "SELECT * FROM `users` WHERE nama = '$nama'";
+    $query = "SELECT * FROM `users` WHERE `name` = '$name'";
     // var_dump($query);die();
     if( $riset = mysqli_query($link, $query) ) {
         if( mysqli_num_rows($riset) == 0 ) {

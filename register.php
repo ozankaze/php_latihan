@@ -3,12 +3,12 @@
 require_once('core/init.php');
 require_once('view/header.php');
 
-if( !isset( $_SESSION['email'] ) ) {
-    header('Location: login.php');
-}
+// if( !isset( $_SESSION['email'] ) ) {
+//     header('Location: login.php');
+// }
 
 if( isset($_POST['submit']) ) {
-    $nama = $_POST['nama'];
+    $nama = $_POST['name'];
     $email = $_POST['email'];
     $pass = $_POST['password'];
 
@@ -41,7 +41,7 @@ if( isset($_POST['submit']) ) {
             <form action="register.php" method="post">
                 <div class="form-group">
                     <label for="nama">Nama</label>
-                    <input type="text" name="nama" class="form-control" id="nama">
+                    <input type="text" name="name" class="form-control" id="nama">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
