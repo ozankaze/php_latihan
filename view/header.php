@@ -20,14 +20,15 @@
 
             <div class="collapse navbar-collapse" id="navbarColor01">
                 <ul class="navbar-nav">
-                    <!-- <?php if( cek_role($_SESSION['email']) ) { ?>
+                    <?php if( isset($_SESSION['email']) and cek_role($_SESSION['email'])  ) { ?>
                         <li class="nav-item">
                             <a class="nav-link" href="adminindex.php">Admin daftar santri</a>
                         </li>
-                    <?php } ?> -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.php">Daftar santri</a>
-                    </li>
+                    <?php } else { ?>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.php">Daftar santri</a>
+                        </li>
+                    <?php } ?>
                     <li class="nav-item ml-auto">
                         <!-- <a class="nav-link" href="login.php">Login</a> -->
                         <a href="logout.php" class="btn btn-warning ml-3">Logout</a>
