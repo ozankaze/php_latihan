@@ -23,9 +23,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.php">Nama Siswa</a>
                     </li>
-                    <!-- <li class="nav-item ml-auto">
-                        <a class="nav-link" href="login.php">Login</a>
-                    </li> -->
+                    <li class="nav-item ml-auto">
+                        <!-- <a class="nav-link" href="login.php">Login</a> -->
+                        <a href="logout.php" class="btn btn-warning ml-3">Logout</a>
+                    </li>
                 </ul>
                 </form>
             </div>

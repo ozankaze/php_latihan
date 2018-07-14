@@ -21,7 +21,6 @@ $students = mysqli_query($link, $query);
 <table class="table">
   <h2>Hola Admin</h2>
   <a href="create.php" class="btn btn-success mb-3">Create</a>
-  <a href="logout.php" class="btn btn-warning mb-3 ml-3">Logout</a>
   <thead class="table-primary">
     <th scope="row">1</th>
     <th scope="row">Nama</th>
