@@ -7,7 +7,7 @@ if( !isset( $_SESSION['email'] ) ) {
   header('Location: login.php');
 }
 
-if( isset($_SESSION['email']) and admin_role($_SESSION['email']) ) {
+if( admin_role($_SESSION['email']) == 1 ) {
   header('Location: adminindex.php');
 }
 
