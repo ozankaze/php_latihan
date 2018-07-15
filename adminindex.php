@@ -9,7 +9,7 @@ if( !isset( $_SESSION['email'] ) ) {
 
 if( admin_role($_SESSION['email']) == 0 ) {
   header('Location: index.php');
-}
+} 
 
 $query = "SELECT * FROM `murid`";
 
@@ -20,6 +20,14 @@ $students = mysqli_query($link, $query);
 
 
 ?>
+
+<?php if( isset( $_SESSION['msgloginadmin'] ) ) { ?>
+  <div class="alert alert-dismissible alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Well done!</strong> You successfully welcome admin</a>.
+  </div>
+<?php unset($_SESSION['msgloginadmin']) ?>
+<?php } ?>
 
 <div class="container">
 <table class="table">

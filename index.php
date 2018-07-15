@@ -4,6 +4,7 @@ require_once('core/init.php');
 require_once('view/header.php');
 
 if( !isset( $_SESSION['email'] ) ) {
+  $_SESSION['msglogin'] = 'anda harus login dulu gan';
   header('Location: login.php');
 }
 

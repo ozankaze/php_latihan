@@ -10,6 +10,7 @@ if( isset($_POST['submit']) ) {
     if( admin_role($email) ) {
         // echo 'berhasil';
         $_SESSION['email'] = $email; 
+        $_SESSION['msgloginadmin'] = 'adaww';
         header('Location: adminindex.php');
     } else {
         // cek data
@@ -23,6 +24,13 @@ if( isset($_POST['submit']) ) {
 }
 
 ?>
+
+<?php if( isset($_SESSION['msglogin']) ) { ?>
+    <div class="alert alert-dismissible alert-danger">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Oh shit!</strong> Anda Harus Login Dulu  . . . .
+    </div>
+<?php } ?>
 
 <div class="card text-white bg-primary mb-3" style="max-width: 40rem; margin: 0 auto;">
     <div class="card-header">Login</div>
