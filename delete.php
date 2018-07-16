@@ -4,6 +4,7 @@ require_once('core/init.php');
 require_once('view/header.php');
 
 $id = $_GET['id'];
+$_SESSION['msgdeleteadmin'] = 'adaww';
 
 $query = "DELETE FROM `murid` WHERE id='$id'";
 
