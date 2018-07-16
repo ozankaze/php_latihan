@@ -12,6 +12,7 @@ if( isset($_POST['submit']) ) {
     $nama = $_POST['nama'];
     $umur = $_POST['umur'];
     $alamat = $_POST['alamat'];
+    $_SESSION['msgcreateadmin'] = 'adaww';
 
     $query = "INSERT INTO `murid` (`nama`, `umur`, `alamat`) VALUES ('$nama', '$umur', '$alamat')";
 
