@@ -18,6 +18,7 @@ if( isset($_POST['submit']) ) {
     $nama = $_POST['nama'];
     $umur = $_POST['umur'];
     $alamat = $_POST['alamat'];
+    $_SESSION['msgupdateadmin'] = 'adaww';
 
     $query = "UPDATE `murid` SET nama='$_POST[nama]', umur='$_POST[umur]', alamat='$_POST[alamat]' WHERE id='$id'";
 
