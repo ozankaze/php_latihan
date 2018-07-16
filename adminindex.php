@@ -29,6 +29,30 @@ $students = mysqli_query($link, $query);
 <?php unset($_SESSION['msgloginadmin']) ?>
 <?php } ?>
 
+<?php if( isset( $_SESSION['msgcreateadmin'] ) ) { ?>
+  <div class="alert alert-dismissible alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Well done!</strong> You successfully create data</a>.
+  </div>
+<?php unset($_SESSION['msgcreateadmin']) ?>
+<?php } ?>
+
+<?php if( isset( $_SESSION['msgupdateadmin'] ) ) { ?>
+  <div class="alert alert-dismissible alert-info">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Well done!</strong> You successfully update data</a>.
+  </div>
+<?php unset($_SESSION['msgupdateadmin']) ?>
+<?php } ?>
+
+<?php if( isset( $_SESSION['msgdeleteadmin'] ) ) { ?>
+  <div class="alert alert-dismissible alert-warning">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Well done!</strong> You successfully delete data</a>.
+  </div>
+<?php unset($_SESSION['msgdeleteadmin']) ?>
+<?php } ?>
+
 <div class="container">
 <table class="table">
   <?php if( isset($_SESSION['email']) and admin_role($_SESSION['email']) ) : ?>
