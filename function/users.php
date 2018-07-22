@@ -76,5 +76,15 @@ function admin_role($email) {
     }
 }
 
+// cari data
+function cari_data($cari) {
+    global $link;
+    $query = "SELECT * FROM murid WHERE nama LIKE '%$cari%'";
+    // print_r($query);die();
+    if ( $result = mysqli_query($link, $query) or die('gagal menampilkan data') ) {
+        return $result;
+    }
+}
+
 
 ?>

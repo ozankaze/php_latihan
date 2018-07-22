@@ -18,6 +18,11 @@ $students = mysqli_query($link, $query);
 // var_dump($a);
 // var_dump($student);die();
 
+if( isset($_GET['search']) ) {
+  $cari = $_GET['search'];
+  $students = cari_data($cari);
+}
+
 ?>
 
 <div class="container">
